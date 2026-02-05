@@ -61,7 +61,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen w-full flex flex-col items-center justify-center p-4 bg-[#b599d6] overflow-x-hidden">
+    <div className="min-h-screen w-full flex flex-col items-center justify-center p-4 sm:p-6 bg-gradient-to-br from-[#e9d5ff] via-[#f3e8ff] to-[#d8b4fe] overflow-x-hidden font-roboto selection:bg-purple-200 selection:text-purple-900">
       <div className="mb-8 relative flex items-center justify-center w-full max-w-[400px]">
         <div className="cursor-pointer select-none w-full flex justify-center" onClick={handleLogoClick}>
           {customLogo ? (
