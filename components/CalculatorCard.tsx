@@ -107,24 +107,24 @@ export const CalculatorCard: React.FC<CalculatorCardProps> = ({ onOpenAdminLogin
           {productNum > 0 ? (
             <div className="mt-4 animate-fade-in border-t border-gray-100 pt-4">
               {financedAmountDisplay > 0 && (
-                <div className="text-center mb-5">
-                  <span className="text-gray-600 text-lg font-medium block sm:inline mr-1">O valor parcelado é</span>
-                  <span className="text-[#7000e0] text-xl sm:text-2xl font-bold">
+                <div className="flex flex-row items-center justify-center gap-1.5 mb-5 text-center">
+                  <span className="text-gray-600 text-sm sm:text-lg font-medium whitespace-nowrap">O valor parcelado é</span>
+                  <span className="text-[#7000e0] text-lg sm:text-2xl font-bold whitespace-nowrap">
                     {financedAmountDisplay.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
                   </span>
                 </div>
               )}
               <h3 className="text-gray-500 text-xs font-bold uppercase tracking-wider mb-2 text-center">Opções de Parcelamento</h3>
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
+              <div className="grid grid-cols-3 gap-1.5">
                 {Array.from({ length: 21 }, (_, i) => i + 1).map((opt) => {
                   const result = calculateRow(opt);
                   if (!result) return null;
                   return (
-                    <div key={opt} className="flex flex-col items-center justify-center py-5 px-1 bg-gray-50 rounded border border-gray-200 hover:border-[#7000e0] transition-colors text-center shadow-sm">
-                      <div className="text-gray-800 font-bold text-sm sm:text-base whitespace-nowrap">
+                    <div key={opt} className="flex flex-col items-center justify-center py-3 px-0.5 bg-gray-50 rounded border border-gray-200 hover:border-[#7000e0] transition-colors text-center shadow-sm">
+                      <div className="text-gray-800 font-bold text-xs sm:text-base whitespace-nowrap">
                         <span className="text-[#7000e0]">{opt}x</span> de {result.monthly}
                       </div>
-                      <div className="text-gray-500 text-xs mt-1.5 leading-none">Total: {result.total}</div>
+                      <div className="text-gray-500 text-[10px] sm:text-xs mt-1 leading-none">Total: {result.total}</div>
                     </div>
                   );
                 })}
