@@ -108,7 +108,7 @@ export const CalculatorCard: React.FC<CalculatorCardProps> = ({ onOpenAdminLogin
 
             <FormInput
               icon={<Wallet className="w-5 h-5 text-[#7000e0]" strokeWidth={1.5} />}
-              label="Entrada (Dinheiro/Pix/Aparelho)"
+              label="Valor de entrada (Dinheiro/Pix/Aparelho)"
               placeholder="0,00"
               helperText="Deixe vazio se for sem entrada"
               value={cashDownPayment}
@@ -120,19 +120,10 @@ export const CalculatorCard: React.FC<CalculatorCardProps> = ({ onOpenAdminLogin
 
           {productNum > 0 ? (
             <div className="mt-2 animate-fade-in">
-              <div className="relative py-6">
-                <div className="absolute inset-0 flex items-center" aria-hidden="true">
-                  <div className="w-full border-t border-purple-100"></div>
-                </div>
-                <div className="relative flex justify-center">
-                  <span className="bg-[#fcfaff] px-4 text-xs font-semibold tracking-wider text-purple-300 uppercase">Resultado</span>
-                </div>
-              </div>
-
               {financedAmountDisplay > 0 && (
-                <div className="flex flex-col items-center justify-center gap-1 mb-6 text-center bg-purple-50/50 rounded-2xl p-4 border border-purple-100/50">
-                  <span className="text-gray-500 text-sm font-medium tracking-wide">Valor a parcelar</span>
-                  <span className="text-[#7000e0] text-3xl font-black tracking-tight drop-shadow-sm">
+                <div className="flex flex-row items-center justify-center gap-2 mb-4 mt-2">
+                  <span className="text-gray-500 text-sm font-medium tracking-wide">O valor parcelado é</span>
+                  <span className="text-[#7000e0] text-xl font-black tracking-tight drop-shadow-sm">
                     {financedAmountDisplay.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}
                   </span>
                 </div>
@@ -150,7 +141,7 @@ export const CalculatorCard: React.FC<CalculatorCardProps> = ({ onOpenAdminLogin
                         <div className="text-gray-700 group-hover:text-white font-bold text-xs sm:text-sm whitespace-nowrap transition-colors">
                           <span className="text-[#8b2ce8] group-hover:text-purple-200">{opt}x</span> <span className="text-[10px] opacity-70 font-normal">de</span> {result.monthly}
                         </div>
-                        <div className="text-gray-400 group-hover:text-purple-100 text-[10px] mt-1 font-medium transition-colors">Total: {result.total}</div>
+                        <div className="text-gray-400 group-hover:text-purple-100 text-[10px] mt-1 font-bold transition-colors">Total: {result.total}</div>
                       </div>
                     );
                   })}
