@@ -153,7 +153,7 @@ export const CalculatorCard: React.FC<CalculatorCardProps> = ({ onOpenAdminLogin
                   href="https://wa.me/5581973164090"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 text-[#25D366] hover:text-[#128C7E] transition-colors group"
+                  className="flex items-center gap-2 text-[#7000e0] hover:text-[#5a00b3] transition-colors group"
                 >
                   <span className="font-medium text-sm">Falar com nosso vendedor</span>
                   <div className="bg-[#25D366] text-white p-1.5 rounded-full group-hover:bg-[#128C7E] transition-colors shadow-lg shadow-green-200">
